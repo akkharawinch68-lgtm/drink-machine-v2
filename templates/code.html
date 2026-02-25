@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ตัวอย่างโค้ด</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f2ef;
+            margin: 0;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #6f4e37;
+        }
+
+        .section {
+            background: white;
+            padding: 20px;
+            margin: 25px auto;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        pre {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .back {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        a {
+            text-decoration: none;
+            background-color: #6f4e37;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #54392b;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>ตัวอย่างโค้ดและคำอธิบายการทำงาน</h1>
+
+<div class="section">
+    <h2>1. การสร้างแอป Flask</h2>
+    <pre>
+from flask import Flask
+app = Flask(__name__)
+    </pre>
+    <p>
+        โค้ดส่วนนี้ใช้สำหรับสร้างแอปพลิเคชันเว็บด้วย Flask 
+        ซึ่งเป็น Framework ของภาษา Python ที่ช่วยพัฒนาเว็บได้อย่างง่ายและรวดเร็ว
+        โดย Flask จะทำหน้าที่จัดการเส้นทาง URL และการแสดงผลหน้าเว็บ
+    </p>
+</div>
+
+<div class="section">
+    <h2>2. การสร้าง Route</h2>
+    <pre>
+@app.route("/")
+def home():
+    return render_template("index.html")
+    </pre>
+    <p>
+        Route คือการกำหนดเส้นทางของ URL 
+        เมื่อผู้ใช้งานเข้าเว็บไซต์ที่หน้าแรก ("/") 
+        ระบบจะเรียกไฟล์ index.html มาแสดงผล
+        ทำให้หน้าเว็บสามารถแบ่งเป็นหลายหน้าได้ภายในระบบเดียวกัน
+    </p>
+</div>
+
+<div class="section">
+    <h2>3. การเชื่อมต่อไฟล์ HTML</h2>
+    <pre>
+return render_template("menu.html")
+    </pre>
+    <p>
+        ฟังก์ชัน render_template ใช้เรียกไฟล์ HTML 
+        ที่อยู่ในโฟลเดอร์ templates 
+        เพื่อแสดงผลหน้าเว็บตามที่กำหนด 
+        ทำให้สามารถแยกโครงสร้างหน้าเว็บออกจากโค้ด Python ได้อย่างเป็นระบบ
+    </p>
+</div>
+
+<div class="section">
+    <h2>4. การกำหนด Host และ Port สำหรับ Deploy</h2>
+    <pre>
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=10000)
+    </pre>
+    <p>
+        คำสั่งนี้ใช้กำหนดให้แอปพลิเคชันทำงานบนเซิร์ฟเวอร์ของ Render 
+        โดย host="0.0.0.0" เปิดให้เข้าถึงจากภายนอก 
+        และ port=10000 เป็นพอร์ตที่ Render กำหนดให้ใช้งาน
+    </p>
+</div>
+
+<div class="back">
+    <a href="/">กลับหน้าหลัก</a>
+</div>
+
+</body>
+</html>
